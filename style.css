@@ -1,0 +1,227 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --text-color: white;
+    --bg-url: url(assets/bg-dark-mobile.png);
+    --avatar-stroke: rgba(255, 255, 255, 0.5);
+    --btn-surface: rgba(255, 255, 255, 0.1);
+    --btn-surface-hover: rgba(255, 255, 255, 0.05);
+    --social-hightlight: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(./assets/switch-dark.png);
+}
+
+.light {
+    --text-color: rgba(10, 43, 64, 1);
+    --bg-url: url(assets/bg-light-mobile.png);
+    --avatar-stroke: rgba(10, 43, 64, 0.5);
+    --btn-surface: rgba(10, 43, 64, 0.1);
+    --btn-surface-hover: rgba(10, 43, 64, 0.05);
+    --social-hightlight: rgba(10, 43, 64, 0.2);
+    --switch-bg-url: url(./assets/switch-light.png);
+}
+
+body {
+    background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;
+}
+
+body * {    
+    font-family: "Inter", sans-serif;
+    color: var(--text-color)
+}
+
+/*  cabeçalho da página - Texto: welcome */
+#header {
+    text-align: center;
+    font-size: 16px;
+  	font-weight: 500;
+}
+
+/*  as caixas da página */
+#cointainer {
+    width: 100%;
+    max-width: 568px;
+    margin: 69px auto 0;
+}
+
+/*  caixa da foto */
+#profile {
+    padding: 32px;
+    text-align: center;
+}
+
+#profile img {
+    width: 112px;
+}
+
+#profile p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 32px;
+}
+
+/*  dark and light mode - button */
+
+#switch {
+   position: relative;
+   width: 64px;
+   margin: 4px auto;
+
+}
+
+/* botao circular pequeno */
+
+#switch button {
+    width: 14px;
+    height: 14px;
+
+    background: white no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    z-index: 1;
+    transform: translateY(-50%);
+
+    animation: slide-out 0.2s;
+}
+
+.light #switch button {
+    animation: slide-in 0.2s forwards;
+
+}
+
+#switch button:hover{
+    background: var(--btn-surface-hover);
+}
+
+/* botao maior */
+
+#switch span {
+    display: flex;
+    width: 77px;
+    height: 24px;
+
+    background: var(--switch-bg-url);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+
+    padding: 5px 6px;
+}
+
+ul {
+    list-style: none;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 24px 0;
+
+    font-size: 16px;
+
+}
+
+ul li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 16px 24px;
+
+    background-color: var(--btn-surface);
+    border: 1px solid var(--avatar-stroke);
+    border-radius: 8px;
+
+    backdrop-filter: blur (4);
+    -webkit-backdrop-filter: blur(4);
+
+    text-decoration: none;
+    font-weight: 400;
+
+    transition: background .2s;
+}
+
+ul li a:hover {
+    background-color: var(--btn-surface-hover);
+    border: 1px solid var(--text-color);
+}
+
+#social {
+    display: flex;
+    justify-content: center;
+
+    padding: 24px 0;
+    
+    font-size: 24px;
+
+    color: white;
+    
+}
+
+.light #social {
+    color: white;
+}
+
+
+#social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    transition: background 0.2s;
+    border-radius: 50%;
+
+}
+
+#social a:hover{
+    background: var(--social-hightlight);
+}
+
+footer {
+    padding: 32px 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+@media (min-width: 700px) {
+    :root {
+        --bg-url: url(./assets/bg-dark-desk.png);
+    }
+
+    .light {
+        --bg-url: url(./assets/bg-light-desk.png);
+
+    }
+}
+
+@keyframes slide-in {
+    from {
+        left: 6%;
+    }
+    to {
+        left: 94%;
+    }
+    
+}
+
+@keyframes slide-out {
+    from {
+        left: 94%;
+    }
+    to {
+        left: 6%;
+    }
+    
+}
