@@ -2,7 +2,8 @@
 
 <p align="center">
 Redesign do programa gratuito promovido pela Rocketseat. 
-<a href="https://app.rocketseat.com.br/journey/discover/contents">Estude esse projeto em formato de vídeo clicando aqui.</a>
+<a href="https://app.rocketseat.com.br/journey/discover/contents">
+Estude esse projeto em formato de vídeo clicando aqui.</a>
 </p>
 
 <p align="center">
